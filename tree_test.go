@@ -65,11 +65,17 @@ func cmp[V comparable](t1, t2 *Tree[V]) bool {
 
 // Pullを利用しない場合の比較コード
 func cmp_without_pull[V comparable](t1, t2 *Tree[V]) bool {
-	resume1 := coro.New(func(_ bool, yield func(V) bool) (zero V) {
+	resume1 := coro.New(func(more bool, yield func(V) bool) (zero V) {
+		if !more {
+			return
+		}
 		t1.All(yield)
 		return zero
 	})
-	resume2 := coro.New(func(_ bool, yield func(V) bool) (zero V) {
+	resume2 := coro.New(func(more bool, yield func(V) bool) (zero V) {
+		if !more {
+			return
+		}
 		t2.All(yield)
 		return zero
 	})
