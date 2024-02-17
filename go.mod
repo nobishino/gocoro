@@ -1,3 +1,3 @@
-module github.com/nobishino/coro
+module github.com/nobishino/gocoro
 
 go 1.22.0
