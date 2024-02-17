@@ -1,6 +1,6 @@
 package iter
 
-import "github.com/nobishino/coro"
+import coro "github.com/nobishino/gocoro/coro"
 
 // Seqは個々の値のシーケンスに対するイテレータです。seq(yield)として呼び出されると、seqはシーケンス内の各値vに対してyield(v)を呼び出し、yieldがfalseを返した場合は早期に停止します。
 type Seq[V any] func(yield func(V) bool)

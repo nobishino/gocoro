@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/nobishino/coro"
+	"github.com/nobishino/gocoro/coro"
 )
 
 var (

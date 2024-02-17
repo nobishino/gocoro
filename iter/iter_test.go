@@ -3,7 +3,7 @@ package iter_test
 import (
 	"testing"
 
-	"github.com/nobishino/coro/iter"
+	"github.com/nobishino/gocoro/iter"
 )
 
 func TestPull(t *testing.T) {
